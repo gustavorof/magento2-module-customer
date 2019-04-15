@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Customer\Api\Data\AddressInterface">
+        <attribute code="address_type" type="Danke\Customer\Api\Data\CustomerAddressExtensionAttributeInterface">
+            <join
+                    reference_table="danke_customer_address_extension_attribute"
+                    reference_field="address_id"
+                    join_on_field="id"
+            >
+                <field>address_type</field>
+            </join>
+        </attribute>
+    </extension_attributes>
+</config>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
+         colors="true"
+         bootstrap="./app/bootstrap.php"
+>
+    <testsuite name="Magento Unit Tests">
+        <directory suffix="Test.php">app/code/Danke/*/Test/Unit</directory>
+    </testsuite>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app/code</directory>
+            <exclude>
+                <directory suffix="registration.php">./app/code</directory>
+                <directory suffix=".php">./app/code/*/*/Test</directory>
+                <directory suffix=".php">./app/code/*/*/Setup</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="./var/unit-test-coverage" lowUpperBound="35" highLowerBound="80"/>
+    </logging>
+
+</phpunit>

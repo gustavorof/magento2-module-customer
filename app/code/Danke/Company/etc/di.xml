@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Gustavo Rodrigues Francisco <gustavor.francisco@gmail.com>
+ * @copyright   2019 Gustavo Rodrigues Francisco (http://www.gustavofrancisco.com.br)
+ * @license     http://www.gustavofrancisco.com.br  Copyright
+ *
+ * @link        http://www.gustavofrancisco.com.br
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Danke\Company\Api\Data\CompanyAttributesInterface" type="Danke\Company\Model\CompanyAttributes" />
+
+    <type name="Magento\Customer\Model\Customer">
+        <plugin name="danke_company_attributes" type="Danke\Company\Plugin\Company\Model\CompanyAttributes" sortOrder="1" />
+    </type>
+
+    <type name="Danke\Company\Plugin\Company\Model\CompanyAttributes">
+        <arguments>
+            <argument name="extensionRepository" xsi:type="object">\Danke\Company\Model\CompanyAttributesRepository</argument>
+        </arguments>
+    </type>
+
+    <type name="Danke\Company\Observer\CustomerSaveBeforeObserver">
+        <arguments>
+            <argument name="customerValidator" xsi:type="object">Danke\Company\Model\CustomerValidator</argument>
+        </arguments>
+    </type>
+
+    <type name="Danke\Company\Model\CustomerValidator">
+        <arguments>
+            <argument name="list" xsi:type="array">
+                <item name="cpf_cnpj_validator" xsi:type="string">Danke\Company\Model\Validator\CpfCnpjValidator</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

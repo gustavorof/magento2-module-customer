@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Gustavo Rodrigues Francisco <gustavor.francisco@gmail.com>
+ * @copyright   2019 Gustavo Rodrigues Francisco (http://www.gustavofrancisco.com.br)
+ * @license     http://www.gustavofrancisco.com.br  Copyright
+ *
+ * @link        http://www.gustavofrancisco.com.br
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="Danke_Company::js/cpfcnpj.js"/>
+    </head>
+    <body>
+        <referenceBlock name="customer_form_register">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Danke_Company::customer/form/register.phtml</argument>
+            </action>
+            <container name="form.additional.info" as="form_additional_info">
+                <block class="Magento\Framework\View\Element\Template" name="form_additional_info_privacy_policy" after="-" as="privacy_policy" template="Danke_Company::customer/form/register/privacy-policy.phtml"/>
+            </container>
+        </referenceBlock>
+    </body>
+</page>

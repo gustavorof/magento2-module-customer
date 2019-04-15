@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Gustavo Rodrigues Francisco <gustavor.francisco@gmail.com>
+ * @copyright   2019 Gustavo Rodrigues Francisco (http://www.gustavofrancisco.com.br)
+ * @license     http://www.gustavofrancisco.com.br  Copyright
+ *
+ * @link        http://www.gustavofrancisco.com.br
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_save_before">
+        <observer name="danke_customer_save_before" instance="Danke\Company\Observer\CustomerSaveBeforeObserver" shared="false" />
+    </event>
+</config>

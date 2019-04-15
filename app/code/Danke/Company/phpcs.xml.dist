@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Gustavo Rodrigues Francisco <gustavor.francisco@gmail.com>
+ * @copyright   2019 Gustavo Rodrigues Francisco (http://www.gustavofrancisco.com.br)
+ * @license     http://www.gustavofrancisco.com.br  Copyright
+ *
+ * @link        http://www.gustavofrancisco.com.br
+ */
+-->
+<ruleset name="DankeCoding_Standarts">
+    <description>Danke coding standards</description>
+    <arg value="p"/>
+    <arg name="colors"/>
+    <rule ref="./vendor/magento-ecg/coding-standard/EcgM2/ruleset.xml"/>
+
+	<exclude-pattern>*/Test/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+</ruleset>

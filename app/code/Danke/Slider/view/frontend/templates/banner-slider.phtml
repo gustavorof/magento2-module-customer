@@ -1,0 +1,37 @@
+
+<?php if ($block->isSliderEnabled()) :?>
+    <section class="slider">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="<?php echo $block->getViewFileUrl('Danke_Slider::images/kitchen_adventurer_cheesecake_brownie.jpg');?>" />
+                </li>
+                <li>
+                    <img src="<?php echo $block->getViewFileUrl('Danke_Slider::images/kitchen_adventurer_lemon.jpg');?>" />
+                </li>
+                <li>
+                    <img src="<?php echo $block->getViewFileUrl('Danke_Slider::images/kitchen_adventurer_donut.jpg');?>" />
+                </li>
+                <li>
+                    <img src="<?php echo $block->getViewFileUrl('Danke_Slider::images/kitchen_adventurer_caramel.jpg');?>" />
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        require([
+            'jquery',
+            'flexslider'
+        ], function ($) {
+            'use strict';
+
+            $(window).load(function(){
+                $('.flexslider').flexslider({
+                    animation: "slide"
+                });
+            });
+        });
+
+    </script>
+<?php endif;?>

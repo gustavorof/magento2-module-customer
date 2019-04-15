@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Danke\Customer\Api\Data\CustomerAddressExtensionAttributeInterface" type="Danke\Customer\Model\CustomerAddressExtensionAttribute" />
+
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="customer_address_extension_attributes" type="Danke\Customer\Plugin\Checkout\LayoutProcessor" sortOrder="100"/>
+    </type>
+
+    <type name="Magento\Customer\Model\Data\Address">
+        <plugin name="customer_address_get_custom_attributes" type="Danke\Customer\Plugin\Address\CustomerAddressAttributes" sortOrder="1" />
+    </type>
+
+    <type name="Magento\Customer\Model\ResourceModel\AddressRepository">
+        <plugin name="customer_address_save_custom_attributes" type="Danke\Customer\Plugin\Address\ExtensionAddressAttributes" sortOrder="1" />
+    </type>
+
+    <type name="Danke\Customer\Plugin\Address\CustomerAddressAttributes">
+        <arguments>
+            <argument name="extensionRepository" xsi:type="object">\Danke\Customer\Model\AddressExtensionAttributeRepository</argument>
+        </arguments>
+    </type>
+
+    <type name="Danke\Customer\Plugin\Address\ExtensionAddressAttributes">
+        <arguments>
+            <argument name="extensionRepository" xsi:type="object">\Danke\Customer\Model\AddressExtensionAttributeRepository</argument>
+        </arguments>
+    </type>
+</config>
