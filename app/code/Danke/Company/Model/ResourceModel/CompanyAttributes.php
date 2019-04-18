@@ -11,7 +11,9 @@ namespace Danke\Company\Model\Resource;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 use Danke\Company\Api\Data\CompanyAttributesInterface;
-
+/**
+ * @codeCoverageIgnore
+ */
 class CompanyAttributes extends AbstractDb
 {
     const SCHEMA_NAME = 'danke_company_attribute';

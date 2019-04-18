@@ -3,7 +3,9 @@
 namespace Danke\Customer\Plugin\Checkout;
 
 use Danke\Customer\Model\AddressType;
-
+/**
+ * @codeCoverageIgnore
+ */
 class LayoutProcessor
 {
 

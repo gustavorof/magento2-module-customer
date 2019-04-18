@@ -5,7 +5,9 @@ namespace Danke\Customer\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 use Danke\Customer\Api\Data\CustomerAddressExtensionAttributeInterface;
-
+/**
+ * @codeCoverageIgnore
+ */
 class CustomerAddressExtensionAttribute extends AbstractDb
 {
     const SCHEMA_NAME = 'danke_customer_address_extension_attribute';
